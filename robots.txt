@@ -1,0 +1,8 @@
+# robots.txt – THINK Corporation
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.env
+Disallow: /node_modules/
+
+Sitemap: https://thinkcorporation.com.br/sitemap.xml
