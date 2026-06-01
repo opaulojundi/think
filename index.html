@@ -8,7 +8,6 @@
   <meta name="author" content="THINK Corporation" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="THINK Corporation – Try How Imagining, Not Knowing." />
   <meta property="og:description" content="Tecnologia que transforma desafios em oportunidades. Soluções personalizadas, escaláveis e seguras." />
   <meta property="og:type" content="website" />
@@ -16,57 +15,38 @@
   <meta property="og:image" content="/assets/img/og-image.png" />
   <meta property="og:locale" content="pt_BR" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="THINK Corporation" />
   <meta name="twitter:description" content="Try How Imagining, Not Knowing." />
 
   <title>THINK Corporation – Tecnologia que Transforma</title>
 
-  <!-- Favicon placeholder -->
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
-  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- AOS Animation -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/themes.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       HEADER (loaded via JS fetch for modularity)
-  ============================================================ -->
   <div id="header-placeholder"></div>
 
-  <!-- ============================================================
-       HERO SECTION
-  ============================================================ -->
   <section id="home" class="hero-section">
-    <!-- Particle canvas background -->
     <canvas id="particles-canvas"></canvas>
-    <!-- Grid overlay -->
     <div class="hero-grid-overlay"></div>
 
     <div class="container hero-content">
       <div class="row align-items-center justify-content-center text-center">
         <div class="col-lg-10">
 
-          <!-- Logo SVG substituído por Picture adaptável ao tema para "THINK" + "Corporation" separado -->
           <div class="hero-logo" data-aos="fade-down" data-aos-duration="800">
-            <picture>
-              <source srcset="assets/img/thinkc_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
-              <source srcset="assets/img/thinkc_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
-              <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" class="img-fluid" style="max-width: min(400px, 80vw);">
-            </picture>
+            <img src="assets/img/thinkc_b.svg" alt="THINK Corporation" class="img-fluid theme-light-only" style="max-width: min(400px, 80vw);" />
+            <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" class="img-fluid theme-dark-only" style="max-width: min(400px, 80vw);" />
           </div>
 
           <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
@@ -86,7 +66,6 @@
             </a>
           </div>
 
-          <!-- Scroll indicator -->
           <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="900">
             <div class="scroll-line"></div>
             <span>scroll</span>
@@ -97,33 +76,26 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       SOBRE A EMPRESA
-  ============================================================ -->
   <section id="sobre" class="section-sobre py-6">
     <div class="container">
       <div class="row align-items-center g-5">
 
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
           <div class="section-tag">Sobre nós</div>
-          <!-- Frase "Quem é a THINK" adaptada para usar SVG correspondente -->
+          
           <h2 class="section-title d-flex align-items-center flex-wrap gap-2">
             Quem é a 
-            <picture>
-              <source srcset="assets/img/think_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
-              <source srcset="assets/img/think_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
-              <img src="assets/img/think_w.svg" alt="THINK" style="height: 1.5em; vertical-align: middle;">
-            </picture>
+            <img src="assets/img/think_b.svg" alt="THINK" class="theme-light-only" style="height: 2.5em; vertical-align: middle;" />
+            <img src="assets/img/think_w.svg" alt="THINK" class="theme-dark-only" style="height: 2.5em; vertical-align: middle;" />
           </h2>
+          
           <p class="section-body">
             A 
-            <picture class="d-inline-block">
-              <source srcset="assets/img/thinkc_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
-              <source srcset="assets/img/thinkc_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
-              <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" style="height: 1.1em; vertical-align: middle;">
-            </picture> 
+            <img src="assets/img/thinkc_b.svg" alt="THINK Corporation" class="theme-light-only" style="height: 1.1em; vertical-align: middle; display: inline-block;" />
+            <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" class="theme-dark-only" style="height: 1.1em; vertical-align: middle; display: inline-block;" /> 
             utiliza a tecnologia como motor de crescimento, criando soluções personalizadas que eliminam obstáculos e geram oportunidades.
           </p>
+          
           <p class="section-body">
             Com foco em qualidade, segurança e escalabilidade, desenvolvemos sistemas robustos que entregam valor real aos nossos clientes — do planejamento à entrega, questionamos cada detalhe para que sua empresa evolua sem limites.
           </p>
@@ -159,11 +131,8 @@
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
           <div class="about-visual">
             <div class="tech-graphic">
-              <!-- SVG Tech illustration -->
               <svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg" class="tech-svg">
-                <!-- Circuit board background -->
                 <rect width="500" height="450" rx="16" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
-                <!-- Grid dots -->
                 <g opacity="0.15">
                   <circle cx="50" cy="50" r="2" fill="currentColor"/><circle cx="150" cy="50" r="2" fill="currentColor"/>
                   <circle cx="250" cy="50" r="2" fill="currentColor"/><circle cx="350" cy="50" r="2" fill="currentColor"/>
@@ -178,25 +147,17 @@
                   <circle cx="250" cy="350" r="2" fill="currentColor"/><circle cx="350" cy="350" r="2" fill="currentColor"/>
                   <circle cx="450" cy="350" r="2" fill="currentColor"/>
                 </g>
-                <!-- Central hexagon -->
                 <polygon points="250,120 310,155 310,225 250,260 190,225 190,155" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
                 <polygon points="250,140 295,165 295,215 250,240 205,215 205,165" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
                 
-                <!-- Inclusão dinâmica via tag de imagem no SVG para renderizar a logo baseada no tema ativo ("THINK" + "Corporation" separado) -->
-                <g class="theme-light-only" opacity="0.9">
-                  <image href="assets/img/thinkc_b.svg" x="160" y="165" width="180" height="60" />
-                </g>
-                <g class="theme-dark-only" opacity="0.9">
-                  <image href="assets/img/thinkc_w.svg" x="160" y="165" width="180" height="60" />
-                </g>
+                <image href="assets/img/thinkc_b.svg" x="160" y="165" width="180" height="60" class="theme-light-only" opacity="0.9" />
+                <image href="assets/img/thinkc_w.svg" x="160" y="165" width="180" height="60" class="theme-dark-only" opacity="0.9" />
 
-                <!-- Connection lines -->
                 <line x1="190" y1="190" x2="80" y2="120" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,4"/>
                 <line x1="310" y1="190" x2="420" y2="120" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,4"/>
                 <line x1="250" y1="260" x2="250" y2="360" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,4"/>
                 <line x1="190" y1="155" x2="90" y2="300" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,4"/>
                 <line x1="310" y1="155" x2="410" y2="300" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,4"/>
-                <!-- Nodes -->
                 <circle cx="80" cy="120" r="18" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
                 <text x="80" y="125" text-anchor="middle" font-family="Bootstrap Icons" font-size="14" fill="currentColor" opacity="0.8">⚡</text>
                 <circle cx="420" cy="120" r="18" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
@@ -207,7 +168,6 @@
                 <text x="90" y="305" text-anchor="middle" font-size="14" fill="currentColor" opacity="0.8">💡</text>
                 <circle cx="410" cy="300" r="18" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
                 <text x="410" y="305" text-anchor="middle" font-size="14" fill="currentColor" opacity="0.8">🚀</text>
-                <!-- Orbit ring -->
                 <ellipse cx="250" cy="190" rx="180" ry="50" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.15" stroke-dasharray="6,6"/>
               </svg>
             </div>
@@ -218,19 +178,15 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       SERVIÇOS
-  ============================================================ -->
   <section id="servicos" class="section-servicos py-6">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
         <div class="section-tag mx-auto">Soluções</div>
         <h2 class="section-title">Nossos <span class="accent-text">Serviços</span></h2>
-        <p class="section-subtitle">Do conceito à entrega — cada solution pensada para o seu negócio.</p>
+        <p class="section-subtitle">Do conceito à entrega — cada solução pensada para o seu negócio.</p>
       </div>
 
       <div class="row g-4">
-        <!-- Card 1 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
           <div class="service-card">
             <div class="service-icon-wrap">
@@ -241,7 +197,6 @@
             <div class="service-arrow"><i class="bi bi-arrow-right"></i></div>
           </div>
         </div>
-        <!-- Card 2 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
           <div class="service-card">
             <div class="service-icon-wrap">
@@ -252,7 +207,6 @@
             <div class="service-arrow"><i class="bi bi-arrow-right"></i></div>
           </div>
         </div>
-        <!-- Card 3 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
           <div class="service-card">
             <div class="service-icon-wrap">
@@ -263,7 +217,6 @@
             <div class="service-arrow"><i class="bi bi-arrow-right"></i></div>
           </div>
         </div>
-        <!-- Card 4 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
           <div class="service-card">
             <div class="service-icon-wrap">
@@ -274,7 +227,6 @@
             <div class="service-arrow"><i class="bi bi-arrow-right"></i></div>
           </div>
         </div>
-        <!-- Card 5 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="320">
           <div class="service-card">
             <div class="service-icon-wrap">
@@ -285,7 +237,6 @@
             <div class="service-arrow"><i class="bi bi-arrow-right"></i></div>
           </div>
         </div>
-        <!-- Card 6 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
           <div class="service-card">
             <div class="service-icon-wrap">
@@ -300,9 +251,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       NOSSA EQUIPE
-  ============================================================ -->
   <section id="equipe" class="section-equipe py-6">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
@@ -312,7 +260,6 @@
       </div>
 
       <div class="row g-4 justify-content-center">
-        <!-- Paulo Jundi -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
           <div class="team-card">
             <div class="team-avatar-wrap">
@@ -336,7 +283,6 @@
           </div>
         </div>
 
-        <!-- Felipe Tonetti -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
           <div class="team-card">
             <div class="team-avatar-wrap">
@@ -359,7 +305,6 @@
           </div>
         </div>
 
-        <!-- Gustavo Alboz -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
           <div class="team-card">
             <div class="team-avatar-wrap">
@@ -385,9 +330,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       MISSÃO, VISÃO, VALORES
-  ============================================================ -->
   <section id="missao" class="section-mvv py-6">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
@@ -395,7 +337,6 @@
         <h2 class="section-title">Missão · Visão · <span class="accent-text">Valores</span></h2>
       </div>
 
-      <!-- Missão -->
       <div class="row mb-5">
         <div class="col-12" data-aos="fade-up">
           <div class="mvv-block mvv-missao">
@@ -414,7 +355,6 @@
         </div>
       </div>
 
-      <!-- Visão -->
       <div class="row mb-5">
         <div class="col-12" data-aos="fade-up">
           <div class="mvv-block mvv-visao">
@@ -432,7 +372,6 @@
         </div>
       </div>
 
-      <!-- Valores grid -->
       <div class="row g-4" id="valores">
         <div class="col-12 text-center mb-2" data-aos="fade-up">
           <h3 class="mvv-section-title">Valores</h3>
@@ -483,9 +422,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       FEEDBACK DOS CLIENTES
-  ============================================================ -->
   <section id="feedback" class="section-feedback py-6">
     <div class="container">
       <div class="row justify-content-center">
@@ -524,17 +460,13 @@
       </div>
     </div>
 
-    <!-- Toast notification -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:9999">
       <div id="feedbackToast" class="toast think-toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
           <i class="bi bi-check-circle-fill text-success me-2"></i>
           <strong class="me-auto">
-            <picture>
-              <source srcset="assets/img/thinkc_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
-              <source srcset="assets/img/thinkc_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
-              <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" style="height: 1.2em; vertical-align: middle;">
-            </picture>
+            <img src="assets/img/thinkc_b.svg" alt="THINK Corporation" class="theme-light-only" style="height: 1.2em; vertical-align: middle;" />
+            <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" class="theme-dark-only" style="height: 1.2em; vertical-align: middle;" />
           </strong>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fechar"></button>
         </div>
@@ -545,9 +477,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       CONTATO
-  ============================================================ -->
   <section id="contato" class="section-contato py-6">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
@@ -587,7 +516,6 @@
         </div>
       </div>
 
-      <!-- Map embed -->
       <div class="row" data-aos="fade-up">
         <div class="col-12">
           <div class="map-container">
@@ -603,12 +531,8 @@
     </div>
   </section>
 
-  <!-- FOOTER placeholder -->
   <div id="footer-placeholder"></div>
 
-  <!-- ============================================================
-       VLibras – Acessibilidade em Libras
-  ============================================================ -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
@@ -620,11 +544,8 @@
     new window.VLibras.Widget('https://vlibras.gov.br/app');
   </script>
 
-  <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <!-- Custom JS -->
   <script src="js/theme.js"></script>
   <script src="js/feedback.js"></script>
   <script src="js/main.js"></script>
