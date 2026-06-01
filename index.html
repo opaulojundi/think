@@ -60,14 +60,13 @@
       <div class="row align-items-center justify-content-center text-center">
         <div class="col-lg-10">
 
-          <!-- Logo SVG inline -->
+          <!-- Logo SVG substituído por Picture adaptável ao tema para "THINK" + "Corporation" separado -->
           <div class="hero-logo" data-aos="fade-down" data-aos-duration="800">
-            <svg class="think-logo-svg" viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="72" text-anchor="middle" class="logo-text-svg">TH<tspan class="logo-i-tspan">I</tspan>NK</text>
-              <!-- Question mark dot over the I -->
-              <text x="50%" y="30" text-anchor="middle" class="logo-qmark-svg">?</text>
-            </svg>
-            <p class="logo-sub-svg">CORPORATION</p>
+            <picture>
+              <source srcset="assets/img/thinkc_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
+              <source srcset="assets/img/thinkc_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
+              <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" class="img-fluid" style="max-width: min(400px, 80vw);">
+            </picture>
           </div>
 
           <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
@@ -107,9 +106,23 @@
 
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
           <div class="section-tag">Sobre nós</div>
-          <h2 class="section-title">Quem é a <span class="accent-text">THINK</span></h2>
+          <!-- Frase "Quem é a THINK" adaptada para usar SVG correspondente -->
+          <h2 class="section-title d-flex align-items-center flex-wrap gap-2">
+            Quem é a 
+            <picture>
+              <source srcset="assets/img/think_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
+              <source srcset="assets/img/think_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
+              <img src="assets/img/think_w.svg" alt="THINK" style="height: 1.5em; vertical-align: middle;">
+            </picture>
+          </h2>
           <p class="section-body">
-            A THINK Corporation utiliza a tecnologia como motor de crescimento, criando soluções personalizadas que eliminam obstáculos e geram oportunidades.
+            A 
+            <picture class="d-inline-block">
+              <source srcset="assets/img/thinkc_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
+              <source srcset="assets/img/thinkc_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
+              <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" style="height: 1.1em; vertical-align: middle;">
+            </picture> 
+            utiliza a tecnologia como motor de crescimento, criando soluções personalizadas que eliminam obstáculos e geram oportunidades.
           </p>
           <p class="section-body">
             Com foco em qualidade, segurança e escalabilidade, desenvolvemos sistemas robustos que entregam valor real aos nossos clientes — do planejamento à entrega, questionamos cada detalhe para que sua empresa evolua sem limites.
@@ -168,9 +181,15 @@
                 <!-- Central hexagon -->
                 <polygon points="250,120 310,155 310,225 250,260 190,225 190,155" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
                 <polygon points="250,140 295,165 295,215 250,240 205,215 205,165" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
-                <!-- THINK text center -->
-                <text x="250" y="195" text-anchor="middle" font-family="Orbitron" font-size="22" font-weight="700" fill="currentColor" opacity="0.9">THINK</text>
-                <text x="250" y="215" text-anchor="middle" font-family="Orbitron" font-size="9" fill="currentColor" opacity="0.5" letter-spacing="3">CORPORATION</text>
+                
+                <!-- Inclusão dinâmica via tag de imagem no SVG para renderizar a logo baseada no tema ativo ("THINK" + "Corporation" separado) -->
+                <g class="theme-light-only" opacity="0.9">
+                  <image href="assets/img/thinkc_b.svg" x="160" y="165" width="180" height="60" />
+                </g>
+                <g class="theme-dark-only" opacity="0.9">
+                  <image href="assets/img/thinkc_w.svg" x="160" y="165" width="180" height="60" />
+                </g>
+
                 <!-- Connection lines -->
                 <line x1="190" y1="190" x2="80" y2="120" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,4"/>
                 <line x1="310" y1="190" x2="420" y2="120" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,4"/>
@@ -207,7 +226,7 @@
       <div class="text-center mb-5" data-aos="fade-up">
         <div class="section-tag mx-auto">Soluções</div>
         <h2 class="section-title">Nossos <span class="accent-text">Serviços</span></h2>
-        <p class="section-subtitle">Do conceito à entrega — cada solução pensada para o seu negócio.</p>
+        <p class="section-subtitle">Do conceito à entrega — cada solution pensada para o seu negócio.</p>
       </div>
 
       <div class="row g-4">
@@ -510,7 +529,13 @@
       <div id="feedbackToast" class="toast think-toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
           <i class="bi bi-check-circle-fill text-success me-2"></i>
-          <strong class="me-auto">THINK Corporation</strong>
+          <strong class="me-auto">
+            <picture>
+              <source srcset="assets/img/thinkc_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
+              <source srcset="assets/img/thinkc_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
+              <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" style="height: 1.2em; vertical-align: middle;">
+            </picture>
+          </strong>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fechar"></button>
         </div>
         <div class="toast-body" id="toastMessage">
