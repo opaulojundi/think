@@ -70,3 +70,24 @@
 
 /* Exceção: não aplicar transition em animações de hover específicas
    (sobrescritas em style.css onde necessário) */
+
+
+/* ============================================================
+   Controle Automático de Imagens por Tema (SVG / Logos)
+============================================================ */
+
+/* Quando o tema for Escuro (Dark): esconde imagens claras, mostra escuras */
+[data-theme="dark"] .theme-light-only {
+  display: none !important;
+}
+[data-theme="dark"] .theme-dark-only {
+  display: inline-block !important;
+}
+
+/* Quando o tema for Claro (Light): esconde imagens escuras, mostra claras */
+[data-theme="light"] .theme-light-only {
+  display: inline-block !important;
+}
+[data-theme="light"] .theme-dark-only {
+  display: none !important;
+}
