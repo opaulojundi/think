@@ -1,0 +1,72 @@
+/* ============================================================
+   themes.css – Variáveis de tema claro e escuro
+   THINK Corporation
+============================================================ */
+
+/* ── Tema Escuro (padrão) ── */
+[data-theme="dark"] {
+  --primary:          #FFFFFF;
+  --secondary:        #000000;
+  --bg-base:          #080808;
+  --bg-surface:       #111111;
+  --bg-elevated:      #1a1a1a;
+  --bg-card:          #141414;
+  --border-color:     rgba(255, 255, 255, 0.08);
+  --border-accent:    rgba(255, 255, 255, 0.20);
+  --text-primary:     #FFFFFF;
+  --text-secondary:   #a0a0a0;
+  --text-muted:       #555555;
+  --accent:           #FFFFFF;
+  --accent-glow:      rgba(255, 255, 255, 0.12);
+  --hero-overlay:     rgba(0, 0, 0, 0.6);
+  --navbar-bg:        rgba(8, 8, 8, 0.92);
+  --card-shadow:      0 4px 24px rgba(0, 0, 0, 0.6);
+  --card-shadow-hover:0 8px 40px rgba(255, 255, 255, 0.08);
+  --input-bg:         #1a1a1a;
+  --toast-bg:         #1a1a1a;
+  --footer-bg:        #080808;
+  --particle-color:   255, 255, 255;
+  --scrollbar-thumb:  #333;
+  --scrollbar-track:  #111;
+}
+
+/* ── Tema Claro ── */
+[data-theme="light"] {
+  --primary:          #000000;
+  --secondary:        #FFFFFF;
+  --bg-base:          #f8f8f8;
+  --bg-surface:       #FFFFFF;
+  --bg-elevated:      #f2f2f2;
+  --bg-card:          #FFFFFF;
+  --border-color:     rgba(0, 0, 0, 0.08);
+  --border-accent:    rgba(0, 0, 0, 0.20);
+  --text-primary:     #080808;
+  --text-secondary:   #555555;
+  --text-muted:       #999999;
+  --accent:           #000000;
+  --accent-glow:      rgba(0, 0, 0, 0.06);
+  --hero-overlay:     rgba(248, 248, 248, 0.55);
+  --navbar-bg:        rgba(248, 248, 248, 0.95);
+  --card-shadow:      0 4px 24px rgba(0, 0, 0, 0.10);
+  --card-shadow-hover:0 8px 40px rgba(0, 0, 0, 0.16);
+  --input-bg:         #f2f2f2;
+  --toast-bg:         #FFFFFF;
+  --footer-bg:        #0a0a0a;
+  --particle-color:   0, 0, 0;
+  --scrollbar-thumb:  #ccc;
+  --scrollbar-track:  #f0f0f0;
+}
+
+/* ── Transição suave ao trocar tema ── */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Exceção: não aplicar transition em animações de hover específicas
+   (sobrescritas em style.css onde necessário) */

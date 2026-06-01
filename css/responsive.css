@@ -1,0 +1,139 @@
+/* ============================================================
+   responsive.css – Media queries THINK Corporation
+============================================================ */
+
+/* ── Tablet e abaixo (≤ 991px) ── */
+@media (max-width: 991.98px) {
+
+  /* Navbar */
+  .think-navbar .navbar-collapse {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: .8rem;
+    padding: 1.5rem;
+  }
+
+  .navbar-actions {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  /* Hero */
+  .hero-title { font-size: clamp(1.4rem, 5vw, 2.2rem); }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-buttons .btn-think-primary,
+  .hero-buttons .btn-think-outline {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  /* MVV block */
+  .mvv-block {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  /* Section padding reduction */
+  .py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* ── Mobile (≤ 767px) ── */
+@media (max-width: 767.98px) {
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .hero-logo .think-logo-svg {
+    width: min(280px, 85vw);
+  }
+
+  .logo-text-svg {
+    font-size: 62px;
+  }
+
+  .hero-slogan {
+    font-size: .82rem;
+  }
+
+  .scroll-indicator { display: none; }
+
+  .stat-card { padding: 1rem .8rem; }
+  .stat-number { font-size: 1.5rem; }
+
+  .feedback-form-wrap {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-card { padding: 1.5rem 1rem; }
+
+  .footer-bottom .col-md-6:first-child,
+  .footer-bottom .col-md-6:last-child {
+    text-align: center !important;
+  }
+
+  .py-6 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* ── Small mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+
+  .logo-text-svg { font-size: 52px; }
+
+  .hero-title { font-size: 1.4rem; }
+
+  .btn-think-primary,
+  .btn-think-outline {
+    padding: .65rem 1.4rem;
+    font-size: .82rem;
+  }
+
+  .service-card,
+  .team-card,
+  .value-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .map-container iframe {
+    height: 240px;
+  }
+}
+
+/* ── Large desktop (≥ 1400px) ── */
+@media (min-width: 1400px) {
+  .hero-title { font-size: 3.2rem; }
+  .section-title { font-size: 3rem; }
+}
+
+/* ── Redução de movimento (acessibilidade) ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-line { animation: none; }
+  .team-avatar-ring { animation: none; }
+  #particles-canvas { display: none; }
+}
