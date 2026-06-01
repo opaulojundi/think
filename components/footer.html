@@ -1,58 +1,37 @@
-<!-- ============================================================
-     footer.html – Componente de rodapé da THINK Corporation
-     Carregado dinamicamente via fetch() em main.js
-============================================================ -->
 <footer id="main-footer" class="think-footer">
   <div class="container">
     <div class="row g-5">
 
-      <!-- ── Coluna 1: Logo + Slogan ── -->
       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
-        <a href="#home" class="footer-brand" aria-label="THINK Corporation – Topo da página">
-          <svg class="footer-logo-svg" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <text x="0" y="38" class="footer-logo-text">TH<tspan class="footer-i-tspan">I</tspan>NK</text>
-            <text x="57" y="18" class="footer-qmark">?</text>
-          </svg>
-          <span class="footer-corp-txt">CORPORATION</span>
+        <a href="#home" class="footer-brand d-block mb-3" aria-label="THINK Corporation – Topo da página">
+          <picture>
+            <source srcset="assets/img/thinkc_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
+            <source srcset="assets/img/thinkc_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
+            <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" class="footer-logo-img" style="height: 35px; width: auto;">
+          </picture>
         </a>
         <p class="footer-slogan">"Try How Imagining, Not Knowing."</p>
         <p class="footer-tagline">Tecnologia que transforma desafios em oportunidades.</p>
 
-        <!-- Redes sociais -->
         <div class="footer-socials">
           <a href="#" class="footer-social-link" aria-label="LinkedIn THINK Corporation"><i class="bi bi-linkedin"></i></a>
           <a href="#" class="footer-social-link" aria-label="GitHub THINK Corporation"><i class="bi bi-github"></i></a>
           <a href="#" class="footer-social-link" aria-label="Instagram THINK Corporation"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="footer-social-link" aria-label="Twitter/X THINK Corporation"><i class="bi bi-twitter-x"></i></a>
         </div>
       </div>
 
-      <!-- ── Coluna 2: Links rápidos ── -->
-      <div class="col-sm-6 col-lg-2" data-aos="fade-up" data-aos-delay="100">
-        <h5 class="footer-col-title">Navegação</h5>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <h5 class="footer-col-title">Links Rápidos</h5>
         <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#equipe">Equipe</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#servicos">Nossos Serviços</a></li>
+          <li><a href="#equipe">Nossa Equipe</a></li>
+          <li><a href="#feedback">Deixe seu Feedback</a></li>
         </ul>
       </div>
 
-      <!-- ── Coluna 3: Serviços ── -->
-      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-        <h5 class="footer-col-title">Serviços</h5>
-        <ul class="footer-links">
-          <li><a href="#servicos">Desenvolvimento Web</a></li>
-          <li><a href="#servicos">Sistemas Empresariais</a></li>
-          <li><a href="#servicos">Banco de Dados</a></li>
-          <li><a href="#servicos">Análise de Dados</a></li>
-          <li><a href="#servicos">Consultoria Tecnológica</a></li>
-        </ul>
-      </div>
-
-      <!-- ── Coluna 4: Contato ── -->
-      <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
         <h5 class="footer-col-title">Contato</h5>
         <ul class="footer-contact-list">
           <li>
@@ -76,26 +55,24 @@
 
     </div>
 
-    <!-- ── Linha divisória ── -->
     <hr class="footer-divider" />
 
-    <!-- ── Copyright ── -->
     <div class="row align-items-center footer-bottom">
       <div class="col-md-6 text-center text-md-start">
-        <p class="footer-copy">
-          &copy; <span id="footerYear"></span> <strong>THINK Corporation</strong>. Todos os direitos reservados.
+        <p class="footer-copy d-flex align-items-center flex-wrap gap-1 justify-content-center justify-content-md-start">
+          &copy; <span id="footerYear"></span> 
+          <picture class="d-inline-block">
+            <source srcset="assets/img/thinkc_b.svg" media="(prefers-color-scheme: light) or [data-theme='light']">
+            <source srcset="assets/img/thinkc_w.svg" media="(prefers-color-scheme: dark) or [data-theme='dark']">
+            <img src="assets/img/thinkc_w.svg" alt="THINK Corporation" style="height: 1.1em; vertical-align: middle;">
+          </picture>. Todos os direitos reservados.
         </p>
       </div>
       <div class="col-md-6 text-center text-md-end">
         <p class="footer-copy">
-          Desenvolvido com <i class="bi bi-heart-fill text-danger"></i> pela equipe THINK
+          Desenvolvido com <i class="bi bi-heart-fill text-danger mx-1" title="Amor"></i> por Tech Team.
         </p>
       </div>
     </div>
-
   </div>
 </footer>
-<script>
-  // Atualiza o ano automaticamente no footer
-  document.getElementById('footerYear').textContent = new Date().getFullYear();
-</script>
