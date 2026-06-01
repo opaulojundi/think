@@ -60,15 +60,20 @@
       <div class="row align-items-center justify-content-center text-center">
         <div class="col-lg-10">
 
-          <!-- Logo SVG inline -->
           <div class="hero-logo" data-aos="fade-down" data-aos-duration="800">
-            <svg class="think-logo-svg" viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="72" text-anchor="middle" class="logo-text-svg">TH<tspan class="logo-i-tspan">I</tspan>NK</text>
-              <!-- Question mark dot over the I -->
-              <text x="50%" y="30" text-anchor="middle" class="logo-qmark-svg">?</text>
-            </svg>
-            <p class="logo-sub-svg">CORPORATION</p>
-          </div>
+    <picture>
+        <!-- Tema escuro -->
+        <source
+            srcset="assets/img/thinkc_w.svg"
+            media="(prefers-color-scheme: dark)">
+
+        <!-- Tema claro -->
+        <img
+            src="assets/img/thinkc_b.svg"
+            alt="THINK Corporation"
+            class="think-logo">
+    </picture>
+</div>
 
           <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
             Tecnologia que <span class="accent-text">transforma</span><br/>desafios em oportunidades.
