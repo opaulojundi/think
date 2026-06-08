@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // CONFIGURAÇÃO: Insira o número de WhatsApp da empresa aqui (com DDD, apenas números)
   // Exemplo: 5511999999999 (55 = Brasil, 11 = SP, 99999-9999 = Número)
-  const WHATSAPP_NUMERO = "5511999999999"; 
+  const WHATSAPP_NUMERO = "5511977939054"; 
 
   // Elementos do formulário
   const btnEnviar = document.getElementById("btnEnviarFeedback");
