@@ -1,176 +1,71 @@
-/**
- * feedback.js – Envio de feedback via backend Node.js
- * THINK Corporation
- *
- * Fluxo:
- *  1. Usuário preenche nome, e-mail e mensagem
- *  2. Clique em "Enviar Feedback" valida os campos
- *  3. POST para /api/feedback (server.js)
- *  4. Backend encaminha via WhatsApp Cloud API
- *  5. Toast Bootstrap exibe confirmação (sem abrir WhatsApp Web)
- */
+document.addEventListener("DOMContentLoaded", function () {
+  // CONFIGURAÇÃO: Insira o número de WhatsApp da empresa aqui (com DDD, apenas números)
+  // Exemplo: 5511999999999 (55 = Brasil, 11 = SP, 99999-9999 = Número)
+  const WHATSAPP_NUMERO = "5511999999999"; 
 
-(function () {
-  'use strict';
+  // Elementos do formulário
+  const btnEnviar = document.getElementById("btnEnviarFeedback");
+  const btnText = document.getElementById("feedbackBtnText");
+  const btnLoading = document.getElementById("feedbackBtnLoading");
+  
+  const inputNome = document.getElementById("feedbackNome");
+  const inputEmail = document.getElementById("feedbackEmail");
+  const inputMensagem = document.getElementById("feedbackMensagem");
 
-  // ── Endpoint do backend ──
-  // Em produção, substitua pela URL real do servidor.
-  const API_URL = '/api/feedback';
+  // Elemento do Toast (Bootstrap)
+  const toastElement = document.getElementById("feedbackToast");
+  const toast = bootstrap.Toast.getOrCreateInstance(toastElement);
 
-  // ── Utilitários de DOM ──
-  const $ = (id) => document.getElementById(id);
-
-  /**
-   * Valida um e-mail simples.
-   * @param {string} email
-   * @returns {boolean}
-   */
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-  }
-
-  /**
-   * Exibe o toast Bootstrap com uma mensagem personalizada.
-   * @param {string} message
-   * @param {'success'|'error'} type
-   */
-  function showToast(message, type = 'success') {
-    const toastEl = $('feedbackToast');
-    const toastMsg = $('toastMessage');
-
-    if (!toastEl || !toastMsg) return;
-
-    toastMsg.textContent = message;
-
-    // Muda cor do ícone conforme tipo
-    const icon = toastEl.querySelector('.bi');
-    if (icon) {
-      icon.className = type === 'success'
-        ? 'bi bi-check-circle-fill text-success me-2'
-        : 'bi bi-exclamation-circle-fill text-danger me-2';
+  // Evento de clique no botão de enviar
+  btnEnviar.addEventListener("click", function () {
+    // 1. Validação simples dos campos obrigatórios
+    if (!inputNome.value.trim() || !inputEmail.value.trim() || !inputMensagem.value.trim()) {
+      alert("Por favor, preencha todos os campos antes de enviar.");
+      return;
     }
 
-    const toast = bootstrap.Toast.getOrCreateInstance(toastEl, { delay: 4500 });
-    toast.show();
-  }
+    // 2. Ativar o estado de "Enviando..." no botão
+    btnEnviar.disabled = true;
+    btnText.classList.add("d-none");
+    btnLoading.classList.remove("d-none");
 
-  /**
-   * Marca um campo como inválido com feedback visual.
-   * @param {HTMLElement} el
-   * @param {string} msg
-   */
-  function setInvalid(el, msg) {
-    el.classList.add('is-invalid');
-    let fb = el.nextElementSibling;
-    if (!fb || !fb.classList.contains('invalid-feedback')) {
-      fb = document.createElement('div');
-      fb.className = 'invalid-feedback';
-      el.parentNode.insertBefore(fb, el.nextSibling);
-    }
-    fb.textContent = msg;
-  }
+    // 3. Capturar e formatar os dados para a mensagem do WhatsApp
+    const nome = inputNome.value.trim();
+    const email = inputEmail.value.trim();
+    const mensagem = inputMensagem.value.trim();
 
-  /** Remove marcações de inválido de todos os campos. */
-  function clearValidation() {
-    ['feedbackNome', 'feedbackEmail', 'feedbackMensagem'].forEach((id) => {
-      const el = $(id);
-      if (el) el.classList.remove('is-invalid');
-    });
-  }
+    // Texto formatado com quebras de linha e emojis para ficar organizado
+    const textoMensagem = `Olá! Gostaria de deixar um Feedback:
 
-  /**
-   * Alterna estado de loading no botão.
-   * @param {boolean} loading
-   */
-  function setLoading(loading) {
-    const text = $('feedbackBtnText');
-    const spin = $('feedbackBtnLoading');
-    const btn  = $('btnEnviarFeedback');
+*Nome:* ${nome}
+*E-mail:* ${email}
 
-    if (!text || !spin || !btn) return;
+*Mensagem:*
+${mensagem}`;
 
-    btn.disabled = loading;
-    text.classList.toggle('d-none', loading);
-    spin.classList.toggle('d-none', !loading);
-  }
+    // Codifica o texto para o formato aceito em URLs
+    const textoCodificado = encodeURIComponent(textoMensagem);
+    
+    // Cria o link final da API do WhatsApp
+    const urlWhatsapp = `https://wa.me/${WHATSAPP_NUMERO}?text=${textoCodificado}`;
 
-  /**
-   * Envia o feedback ao backend.
-   */
-  async function sendFeedback() {
-    clearValidation();
+    // 4. Simulando um pequeno delay para efeito visual e exibição do Toast
+    setTimeout(() => {
+      // Exibe o Toast de sucesso na tela
+      toast.show();
 
-    const nome     = $('feedbackNome');
-    const email    = $('feedbackEmail');
-    const mensagem = $('feedbackMensagem');
+      // Abre o WhatsApp em uma nova aba
+      window.open(urlWhatsapp, "_blank");
 
-    // ── Validação ──
-    let valid = true;
+      // 5. Limpa o formulário após o envio
+      inputNome.value = "";
+      inputEmail.value = "";
+      inputMensagem.value = "";
 
-    if (!nome.value.trim()) {
-      setInvalid(nome, 'Por favor, informe seu nome.');
-      valid = false;
-    }
-
-    if (!email.value.trim() || !isValidEmail(email.value)) {
-      setInvalid(email, 'Informe um e-mail válido.');
-      valid = false;
-    }
-
-    if (!mensagem.value.trim() || mensagem.value.trim().length < 10) {
-      setInvalid(mensagem, 'A mensagem deve ter ao menos 10 caracteres.');
-      valid = false;
-    }
-
-    if (!valid) return;
-
-    // ── Envio ──
-    setLoading(true);
-
-    try {
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          nome:     nome.value.trim(),
-          email:    email.value.trim(),
-          mensagem: mensagem.value.trim(),
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        showToast('Feedback enviado com sucesso. Obrigado! 🚀', 'success');
-        // Limpa o formulário
-        nome.value     = '';
-        email.value    = '';
-        mensagem.value = '';
-      } else {
-        showToast(data.message || 'Erro ao enviar. Tente novamente.', 'error');
-      }
-    } catch (err) {
-      console.error('[THINK] Erro ao enviar feedback:', err);
-      showToast('Não foi possível conectar ao servidor. Tente mais tarde.', 'error');
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  // ── Registra evento ao carregar o DOM ──
-  document.addEventListener('DOMContentLoaded', function () {
-    const btn = $('btnEnviarFeedback');
-    if (btn) btn.addEventListener('click', sendFeedback);
-
-    // Também permite envio com Enter no campo de mensagem (Ctrl+Enter)
-    const msgArea = $('feedbackMensagem');
-    if (msgArea) {
-      msgArea.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-          e.preventDefault();
-          sendFeedback();
-        }
-      });
-    }
+      // Restaura o botão ao estado original
+      btnEnviar.disabled = false;
+      btnText.classList.remove("d-none");
+      btnLoading.classList.add("d-none");
+    }, 1200); 
   });
-})();
+});
