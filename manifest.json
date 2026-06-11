@@ -2,7 +2,7 @@
   "name": "Think",
   "short_name": "Think",
   "description": "Site oficial da Think Corporation",
-  "start_url": "/",
+  "start_url": "./index.html",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
@@ -11,10 +11,16 @@
   "lang": "pt-BR",
   "icons": [
     {
-      "src": "/assets/img/think_b.svg",
-      "sizes": "16x16 32x32 48x48 72x72 96x96 128x128 144x144 152x152 167x167 180x180 192x192 256x256 384x384 512x512",
+      "src": "assets/img/think_b.svg",
+      "sizes": "48x48 72x72 96x96 128x128 144x144 152x152 167x167 180x180 192x192 256x256 512x512",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/think_b.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ]
 }
